@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especialidad de Programacion</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul: #24496b;
+      --azul-claro: #eaf0f5;
+      --texto: #303b46;
+      --fondo: #f7f8fa;
+      --blanco: #fff;
+      --borde: #dce2e8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.65;
+    }
+
+    header {
+      background: var(--blanco);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .barra {
+      max-width: 1080px;
+      margin: auto;
+      padding: 17px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--azul);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+
+    nav a {
+      color: var(--texto);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    nav a:hover, nav a:focus { color: var(--azul); text-decoration: underline; }
+
+    .portada {
+      background: var(--azul-claro);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .portada-contenido {
+      max-width: 1080px;
+      margin: auto;
+      padding: 52px 24px;
+    }
+
+    .portada h1 {
+      color: var(--azul);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .portada p { max-width: 780px; font-size: 1.05rem; }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 38px 24px 48px;
+    }
+
+    section { scroll-margin-top: 18px; margin-bottom: 38px; }
+
+    h2 {
+      color: var(--azul);
+      font-size: 1.55rem;
+      margin-bottom: 15px;
+    }
+
+    .columnas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .panel {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .panel p { margin-bottom: 10px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+
+    .proyectos {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .tarjeta {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .imagen-contenedor {
+      min-height: 180px;
+      padding: 18px;
+      background: #eef2f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagen-contenedor img {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      max-height: 230px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+
+    .marcador-imagen {
+      width: 100%;
+      min-height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #596777;
+      border: 1px dashed #aab7c5;
+      border-radius: 6px;
+      padding: 20px;
+      background: #f8fafc;
+    }
+
+    .tarjeta-contenido { padding: 19px; }
+    .tarjeta h3 { color: var(--azul); font-size: 1.08rem; margin-bottom: 9px; }
+    .tarjeta p { overflow-wrap: anywhere; }
+
+    .enlace {
+      display: inline-block;
+      margin-top: 10px;
+      color: #245d91;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px 24px;
+      background: #edf1f5;
+      border-top: 1px solid var(--borde);
+      color: #536171;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 760px) {
+      .barra { align-items: flex-start; flex-direction: column; }
+      .columnas { grid-template-columns: 1fr; }
+      .proyectos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .barra { padding: 15px 18px; }
+      nav { gap: 10px 15px; }
+      .portada-contenido { padding: 38px 18px; }
+      main { padding: 28px 18px 36px; }
+      .proyectos { grid-template-columns: 1fr; }
+      .panel { padding: 20px; }
+      h2 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <div class="logo">Programacion</div>
+      <nav aria-label="Navegacion principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#ejemplos">Imagenes</a>
+        <a href="#repositorio">Repositorio</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="portada" id="inicio">
+    <div class="portada-contenido">
+      <h1>Programacion</h1>
+      <p>En esta especialidad nos enseñan la Programacion Orientada a Objetos (POO), tambien la creacion de paginas web con HTML, CSS y JavaScript, los fundamentos de la programacion, mantencion de los ordenadores tanto hardware como software.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="columnas">
+      <section class="panel" id="habilidades">
+        <h2>Habilidades que desarrollamos</h2>
+        <p>Nosotros a lo largo desarrollamos:</p>
+        <ul>
+          <li>La programacion orientada a objetos.</li>
+          <li>Creacion de paginas web.</li>
+          <li>Mantencion del equipo.</li>
+          <li>Resolucion de problemas mediante la programacion.</li>
+          <li>Creacion de proyectos desde cero.</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="proyectos">
+        <h2>Proyectos desarrollados durante nuestra formacion</h2>
+        <ul>
+          <li>El proyecto de la semana ABG (Simulador de catastrofes en Godot).</li>
+          <li>Mejorar el PISE de la pagina del colegio.</li>
+          <li>Aprender a crear paginas web.</li>
+          <li>Creacion de programas utilizando Python.</li>
+          <li>Creacion de un juego con Python.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="ejemplos">
+      <h2>Imagenes de ejemplos de los proyectos realizados</h2>
+      <div class="proyectos">
+        <article class="tarjeta">
+          <div class="imagen-contenedor">
+            <!-- Guarda tu captura como pagina-web.jpg en la misma carpeta que index.html -->
+            <div class="marcador-imagen">Coloca aqui la imagen de la pagina web con JavaScript</div>
+            <!-- Cuando tengas la imagen, reemplaza el div anterior por:
+            <img src="pagina-web.jpg" alt="Pagina web con JavaScript">
+            -->
+          </div>
+          <div class="tarjeta-contenido">
+            <p>En esta imagen se ve la creacion de una pagina web con JavaScript que permite interactuar con esta misma.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="imagen-contenedor">
+            <!-- Guarda tu captura como sistema-estudiantes.jpg en la misma carpeta que index.html -->
+            <div class="marcador-imagen">Coloca aqui la imagen del sistema educativo hecho en Python</div>
+            <!-- Cuando tengas la imagen, reemplaza el div anterior por:
+            <img src="sistema-estudiantes.jpg" alt="Sistema educativo hecho en Python">
+            -->
+          </div>
+          <div class="tarjeta-contenido">
+            <p>Aqui hay un sistema educativo hecho en Python, te permite registrar y mostrar estudiantes.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta" id="repositorio">
+          <div class="imagen-contenedor">
+            <div class="marcador-imagen">Sistema de gestion de turnos medicos</div>
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Repositorio de ejemplo de sistema de gestion de turnos medicos</h3>
+            <a class="enlace" href="https://github.com/nicolaslafian/Kiwi" target="_blank" rel="noopener noreferrer">https://github.com/nicolaslafian/Kiwi</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Programacion</p>
+  </footer>
+</body>
+</html>
